@@ -1,0 +1,25 @@
+---
+name: cmpsc-100-week-4-lab
+break: true
+indent: 4
+---
+
+week-4-lab.py:
+    ConfirmFileExists
+    MatchFileFragment --fragment "open(" --count 1 --exact
+    MatchFileFragment --fragment "read" --count 1 --exact
+    MatchFileFragment --fragment "for" --count 2 --exact
+    MatchFileFragment --fragment "ballot[" --count 1
+    MatchFileFragment --fragment "if" --count 1
+    CountSingleLineComments --language Python --count 7
+
+../writing/reflection.md:
+    ConfirmFileExists
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    CountFileWords --count 250
+    CountFileParagraphs --count 6
+
+MatchCommandFragment --command "python3 week-4-lab.py" --fragment "The winner is G. Wiz -- with 105 votes." --count 1 --exact
+MatchCommandFragment --command "python3 week-4-lab.py" --fragment "Prof. Luman received 1 votes." --count 1 --exact
+MatchCommandFragment --command "python3 week-4-lab.py" --fragment "Ulysses received 1 votes." --count 1 --exact
+CountCommandOutput --command "python3 week-4-lab.py" --count 13

@@ -1,0 +1,37 @@
+---
+name: cmpsc-100-week-4-worksheets
+break: true
+indent: 4
+---
+
+0_week-4-worksheet-dictionaries.ipynb:
+    ConfirmFileExists
+    MatchFileFragment --fragment " Crow\t10" --count 1
+    MatchFileFragment --fragment " Gull\t2" --count 1
+    MatchFileFragment --fragment " Pigeon\t1" --count 1
+    MatchFileFragment --fragment " Hawk\t1" --count 1
+    MatchFileFragment --fragment "birds[" --count 1
+    MatchFileFragment --fragment "for bird in birds" --count 1
+
+1_week-4-worksheet-strings.ipynb:
+    ConfirmFileExists
+    MatchFileFragment --fragment "ord(" --count 7
+    MatchFileFragment --fragment "chr(" --count 5
+    MatchFileFragment --fragment "TODO" --count 0 --exact
+    MatchFileRegex --regex "choice\.upper()|choice\.lower()" --count 1
+    MatchFileFragment --fragment "animal.startswith(" --count 1
+    MatchFileFragment --fragment "bad_message.replace(" --count 1
+    MatchFileFragment --fragment "quote.split()" --count 1
+    MatchFileFragment --fragment ".join(words)" --count 1
+    MatchFileFragment --fragment "word.lower()" --count 1
+    MatchFileFragment --fragment "verse.split()" --count 1
+    MatchFileFragment --fragment "Crow - 10" --count 1
+    MatchFileFragment --fragment "Gull - 5" --count 1
+    MatchFileFragment --fragment "Pigeon - 7" --count 1
+    
+2_week-4-worksheet-io.ipynb:
+    ConfirmFileExists
+    MatchFileFragment --fragment "len(lines)" --count 1
+    MatchFileFragment --fragment "lines[-2]" --count 1
+    MatchFileFragment --fragment "lines[10" --count 1
+    MatchFileFragment --fragment "open(" --count 1
