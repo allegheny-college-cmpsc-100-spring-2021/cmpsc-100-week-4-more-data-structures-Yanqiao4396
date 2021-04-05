@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 
 # TODO: Assign a blank dictionary called ballot
-
-file = # TODO: Open file at path .inputs/.votes
-
+ballot = {}
+file = open(" Open file at path .inputs/.votes")
+text =file.read()
+for V in text.split():
+    try:
+        ballot[V] += 1
+    except:
+        ballot[V] = 1
 # TODO: Loop over file's contents
 #       - incrementing candidates' vote count if already in dictionary
 #       - adding candidate to the ballot if not already a key
@@ -11,7 +16,14 @@ file = # TODO: Open file at path .inputs/.votes
 
 winner = None
 max_votes = 0
-
+print(ballot)
+W = ballot[G. Wiz]
+for candidate in ballot:
+    if ballot[candidate] >= W:
+        winner = candidate
+        max_votes = ballot[candidate]
+   
+    
 # TODO: Iterate over ballot dictionary to:
 #       - list each candidate and total votes they received
 #       - determine the winner of the election
