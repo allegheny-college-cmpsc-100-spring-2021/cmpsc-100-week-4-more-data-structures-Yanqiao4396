@@ -2,9 +2,10 @@
 
 # TODO: Assign a blank dictionary called ballot
 ballot = {}
-file = open(" Open file at path .inputs/.votes")
-text =file.read()
-for V in text.split():
+file = open(".inputs/.votes","r")
+text = file.read()
+#for V in text.split():
+for V in text.split("\n"):
     try:
         ballot[V] += 1
     except:
@@ -16,12 +17,17 @@ for V in text.split():
 
 winner = None
 max_votes = 0
-print(ballot)
-W = ballot[G. Wiz]
+#print(ballot)
+#W = ballot[G. Wiz]
 for candidate in ballot:
-    if ballot[candidate] >= W:
+    votes = ballot[candidate]
+    #if ballot[candidate] >= W:
+    #    winner = candidate              <-- this programs the _answer_, not the _solution_
+    #    max_votes = ballot[candidate]
+    print(f"{candidate} received {votes} votes.")
+    if votes > max_votes:
+        max_votes = votes
         winner = candidate
-        max_votes = ballot[candidate]
    
     
 # TODO: Iterate over ballot dictionary to:
